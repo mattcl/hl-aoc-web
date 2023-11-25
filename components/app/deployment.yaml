@@ -18,6 +18,8 @@ spec:
             - configMapRef:
                 name: "app-config"
             - configMapRef:
+                name: "aoc-sentinel"
+            - configMapRef:
                 name: "db-sentinel"
             - configMapRef:
                 name: "db-connect"
