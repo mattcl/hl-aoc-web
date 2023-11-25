@@ -43,3 +43,24 @@ spec:
             periodSeconds: 5
             failureThreshold: 2
             terminationGracePeriodSeconds: 5
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    spec:
+      containers:
+        - name: frontend
+          image: "mattcl/aoc-ui:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: frontend-http
+              containerPort: 8080
+              protocol: TCP

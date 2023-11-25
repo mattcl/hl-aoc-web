@@ -12,10 +12,16 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`aoc.ancalagon.black`)
+      match: Host(`aoc.ancalagon.black`) && PathPrefix("/api")
       priority: 10
       services:
         - name: aoc-web-svc
+          port: 80
+    - kind: Rule
+      match: Host(`aoc.ancalagon.black`)
+      priority: 9
+      services:
+        - name: aoc-web-frontend-svc
           port: 80
   tls:
     certResolver: default
