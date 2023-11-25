@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ../../components/app
   - ../../components/db
-  
+  - aoc-sealed-secret.yaml
   - db-secret.yaml
 namespace: "aoc-web"
 namePrefix: "aoc-web-"
@@ -13,7 +13,7 @@ images:
     newTag: "latest"
   - name: "docker.io/bitnami/postgresql"
     newTag: "15.3.0-debian-11-r9"
-  
+
 configMapGenerator:
   - name: app-config
     envs:
@@ -24,6 +24,9 @@ configMapGenerator:
   - name: db-sentinel
     files:
       - db-secret.yaml
+  - name: aoc-sentinel
+    files:
+      - aoc-sealed-secret.yaml
   # for configuring the db statefulset
   - name: db-config
     envs:

@@ -12,7 +12,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`aoc-web.ancalagon.black`)
+      match: Host(`aoc.ancalagon.black`)
       priority: 10
       services:
         - name: aoc-web-svc
