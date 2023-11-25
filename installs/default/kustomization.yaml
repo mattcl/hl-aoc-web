@@ -12,7 +12,7 @@ images:
   - name: "mattcl/aoc-web"
     newTag: "0.1.0"
   - name: "mattcl/aoc-ui"
-    newTag: "0.2.1"
+    newTag: "0.2.2"
   - name: "docker.io/bitnami/postgresql"
     newTag: "15.3.0-debian-11-r9"
 
