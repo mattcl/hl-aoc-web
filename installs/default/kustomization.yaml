@@ -16,6 +16,12 @@ images:
   - name: "docker.io/bitnami/postgresql"
     newTag: "15.3.0-debian-11-r9"
 
+replicas:
+  - name: app
+    count: 2
+  - name: frontend
+    count: 2
+
 configMapGenerator:
   - name: app-config
     envs:
